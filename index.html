@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SmartZone 3.1</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="brand-wrap">
+      <div class="logo">SZ</div>
+      <div>
+        <div class="brand">SmartZone</div>
+        <div class="muted">Каталог техніки та аксесуарів</div>
+      </div>
+    </div>
+    <div class="top-actions">
+      <input id="searchInput" class="search" placeholder="Пошук товарів..." oninput="updateSearch(this.value)" />
+      <a class="admin-link" href="admin.html">Адмінка</a>
+    </div>
+  </header>
+
+  <section class="toolbar">
+    <div id="categoryFilters" class="chips"></div>
+    <div class="toolbar-row">
+      <select id="brandFilter" onchange="renderStore()">
+        <option value="">Всі бренди</option>
+      </select>
+      <select id="sortFilter" onchange="renderStore()">
+        <option value="default">Сортування</option>
+        <option value="cheap">Спочатку дешевші</option>
+        <option value="expensive">Спочатку дорожчі</option>
+        <option value="name">За назвою</option>
+      </select>
+    </div>
+  </section>
+
+  <main class="content">
+    <section class="hero">
+      <div>
+        <span class="badge">SmartZone 3.1</span>
+        <h1>Великий онлайн-магазин техніки</h1>
+        <p>Категорії, бренди, пошук, сортування і повноцінна адмінка для керування товарами.</p>
+      </div>
+      <div class="hero-card">
+        <div class="hero-stat"><strong id="heroProductsCount">0</strong><span>товарів</span></div>
+        <div class="hero-stat"><strong id="heroCategoriesCount">0</strong><span>категорій</span></div>
+        <div class="hero-stat"><strong id="heroBrandsCount">0</strong><span>брендів</span></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <div>
+          <h2>Каталог SmartZone</h2>
+          <p class="muted">Додавай товари через адмінку і вони одразу з’являться тут</p>
+        </div>
+      </div>
+      <div id="productsGrid" class="products"></div>
+    </section>
+  </main>
+
+  <script src="store.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
