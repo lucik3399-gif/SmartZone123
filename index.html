@@ -3,65 +3,242 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SmartZone 3.1</title>
+  <title>SmartZone — Преміум магазин смартфонів і аксесуарів</title>
+  <meta name="description" content="SmartZone — сучасний інтернет-магазин смартфонів, навушників, чохлів і аксесуарів." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <span>Безкоштовна доставка від 3000 грн</span>
+      <span>Гарантія 12 місяців</span>
+      <span>Підтримка 7 днів на тиждень</span>
+    </div>
+  </div>
+
   <header class="header">
-    <div class="brand-wrap">
-      <div class="logo">SZ</div>
-      <div>
-        <div class="brand">SmartZone</div>
-        <div class="muted">Каталог техніки та аксесуарів</div>
+    <div class="container header-inner">
+      <a href="#" class="logo">
+        <span class="logo-mark">S</span>
+        <div>
+          <strong>SmartZone</strong>
+          <small>premium electronics</small>
+        </div>
+      </a>
+
+      <form class="search" id="searchForm">
+        <input type="text" id="searchInput" placeholder="Пошук смартфонів, аксесуарів, брендів..." />
+        <button type="submit">Знайти</button>
+      </form>
+
+      <div class="header-actions">
+        <button class="icon-btn" id="favoritesBtn" title="Обране">
+          ❤ <span id="favoritesCount">0</span>
+        </button>
+        <button class="icon-btn cart-btn" id="cartBtn" title="Кошик">
+          🛒 <span id="cartCount">0</span>
+        </button>
       </div>
     </div>
-    <div class="top-actions">
-      <input id="searchInput" class="search" placeholder="Пошук товарів..." oninput="updateSearch(this.value)" />
-      <a class="admin-link" href="admin.html">Адмінка</a>
+
+    <div class="container nav-row">
+      <nav class="nav-cats" id="categoryNav"></nav>
     </div>
   </header>
 
-  <section class="toolbar">
-    <div id="categoryFilters" class="chips"></div>
-    <div class="toolbar-row">
-      <select id="brandFilter" onchange="renderStore()">
-        <option value="">Всі бренди</option>
-      </select>
-      <select id="sortFilter" onchange="renderStore()">
-        <option value="default">Сортування</option>
-        <option value="cheap">Спочатку дешевші</option>
-        <option value="expensive">Спочатку дорожчі</option>
-        <option value="name">За назвою</option>
-      </select>
-    </div>
-  </section>
-
-  <main class="content">
+  <main>
     <section class="hero">
-      <div>
-        <span class="badge">SmartZone 3.1</span>
-        <h1>Великий онлайн-магазин техніки</h1>
-        <p>Категорії, бренди, пошук, сортування і повноцінна адмінка для керування товарами.</p>
-      </div>
-      <div class="hero-card">
-        <div class="hero-stat"><strong id="heroProductsCount">0</strong><span>товарів</span></div>
-        <div class="hero-stat"><strong id="heroCategoriesCount">0</strong><span>категорій</span></div>
-        <div class="hero-stat"><strong id="heroBrandsCount">0</strong><span>брендів</span></div>
+      <div class="container hero-grid">
+        <div class="hero-content glass-card">
+          <span class="hero-badge">Топова версія SmartZone</span>
+          <h1>Магазин техніки, що виглядає як справжній бренд</h1>
+          <p>Преміальний дизайн, популярні моделі, гарячі акції, зручний кошик і швидке оформлення замовлення.</p>
+          <div class="hero-actions">
+            <a href="#catalog" class="btn btn-primary">Перейти в каталог</a>
+            <a href="admin.html" class="btn btn-secondary">Адмін панель</a>
+          </div>
+          <div class="hero-stats">
+            <div><strong>500+</strong><span>товарів</span></div>
+            <div><strong>24/7</strong><span>підтримка</span></div>
+            <div><strong>4.9/5</strong><span>рейтинг</span></div>
+          </div>
+        </div>
+        <div class="hero-side">
+          <div class="promo-card gradient-card">
+            <span>Знижки тижня</span>
+            <h3>До -25% на смартфони та навушники</h3>
+            <p>Онови техніку вигідно вже сьогодні.</p>
+          </div>
+          <div class="promo-card dark-card">
+            <span>SmartZone Select</span>
+            <h3>Преміальні аксесуари для твого смартфона</h3>
+            <p>Захист, стиль і швидка зарядка в одному місці.</p>
+          </div>
+        </div>
       </div>
     </section>
 
-    <section>
+    <section class="highlights container">
+      <div class="highlight-card">
+        <h3>Оригінальна техніка</h3>
+        <p>Перевірені бренди та актуальні моделі.</p>
+      </div>
+      <div class="highlight-card">
+        <h3>Швидка доставка</h3>
+        <p>Відправка по Україні в найкоротші терміни.</p>
+      </div>
+      <div class="highlight-card">
+        <h3>Гарантія та сервіс</h3>
+        <p>Офіційна підтримка і допомога після покупки.</p>
+      </div>
+      <div class="highlight-card">
+        <h3>Зручне замовлення</h3>
+        <p>Кошик, обране та оформлення за 1 хвилину.</p>
+      </div>
+    </section>
+
+    <section class="section container">
       <div class="section-head">
         <div>
-          <h2>Каталог SmartZone</h2>
-          <p class="muted">Додавай товари через адмінку і вони одразу з’являться тут</p>
+          <span class="eyebrow">Популярне</span>
+          <h2>Хіти продажів</h2>
         </div>
       </div>
-      <div id="productsGrid" class="products"></div>
+      <div class="featured-grid" id="featuredGrid"></div>
+    </section>
+
+    <section class="section container" id="catalog">
+      <div class="section-head catalog-head">
+        <div>
+          <span class="eyebrow">Каталог</span>
+          <h2>Обери техніку для себе</h2>
+        </div>
+        <div class="filters">
+          <select id="categoryFilter">
+            <option value="all">Усі категорії</option>
+          </select>
+          <select id="sortSelect">
+            <option value="popular">Спочатку популярні</option>
+            <option value="cheap">Від дешевих до дорогих</option>
+            <option value="expensive">Від дорогих до дешевих</option>
+            <option value="name">За назвою</option>
+          </select>
+        </div>
+      </div>
+      <div class="products-grid" id="productsGrid"></div>
+    </section>
+
+    <section class="section reviews-wrap">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Відгуки</span>
+            <h2>Що кажуть покупці</h2>
+          </div>
+        </div>
+        <div class="reviews-grid">
+          <article class="review-card">
+            <div class="stars">★★★★★</div>
+            <p>Замовив смартфон і чохол — усе приїхало швидко, магазин виглядає дуже професійно.</p>
+            <strong>Олег, Львів</strong>
+          </article>
+          <article class="review-card">
+            <div class="stars">★★★★★</div>
+            <p>Зручно, що можна одразу подивитися характеристики і оформити замовлення без зайвих кроків.</p>
+            <strong>Ірина, Київ</strong>
+          </article>
+          <article class="review-card">
+            <div class="stars">★★★★★</div>
+            <p>Дуже гарний дизайн сайту. Виглядає як справжній великий магазин техніки.</p>
+            <strong>Максим, Тернопіль</strong>
+          </article>
+        </div>
+      </div>
     </section>
   </main>
 
-  <script src="store.js"></script>
+  <aside class="drawer" id="cartDrawer">
+    <div class="drawer-overlay" data-close-drawer></div>
+    <div class="drawer-panel">
+      <div class="drawer-header">
+        <h3>Твій кошик</h3>
+        <button class="close-btn" data-close-drawer>✕</button>
+      </div>
+      <div class="drawer-body" id="cartItems"></div>
+      <div class="drawer-footer">
+        <div class="drawer-total">
+          <span>Разом:</span>
+          <strong id="cartTotal">0 грн</strong>
+        </div>
+        <button class="btn btn-primary full" id="openCheckoutBtn">Оформити замовлення</button>
+      </div>
+    </div>
+  </aside>
+
+  <aside class="drawer" id="favoritesDrawer">
+    <div class="drawer-overlay" data-close-favorites></div>
+    <div class="drawer-panel">
+      <div class="drawer-header">
+        <h3>Обране</h3>
+        <button class="close-btn" data-close-favorites>✕</button>
+      </div>
+      <div class="drawer-body" id="favoritesItems"></div>
+    </div>
+  </aside>
+
+  <div class="modal" id="productModal">
+    <div class="modal-overlay" data-close-modal></div>
+    <div class="modal-card" id="modalContent"></div>
+  </div>
+
+  <div class="modal" id="checkoutModal">
+    <div class="modal-overlay" data-close-checkout></div>
+    <div class="modal-card checkout-card">
+      <div class="modal-header-row">
+        <h3>Оформлення замовлення</h3>
+        <button class="close-btn" data-close-checkout>✕</button>
+      </div>
+      <form id="checkoutForm" class="checkout-form">
+        <div class="form-grid">
+          <input required name="name" placeholder="Ваше ім'я" />
+          <input required name="phone" placeholder="Телефон" />
+        </div>
+        <input required name="city" placeholder="Місто" />
+        <input required name="address" placeholder="Відділення або адреса доставки" />
+        <textarea name="comment" placeholder="Коментар до замовлення"></textarea>
+        <button class="btn btn-primary full" type="submit">Підтвердити замовлення</button>
+      </form>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <h4>SmartZone</h4>
+        <p>Сучасний магазин смартфонів, аксесуарів і гаджетів в Україні.</p>
+      </div>
+      <div>
+        <h4>Покупцям</h4>
+        <ul>
+          <li>Каталог</li>
+          <li>Доставка і оплата</li>
+          <li>Гарантія</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Контакти</h4>
+        <ul>
+          <li>+38 (099) 000-00-00</li>
+          <li>smartzone.shop.ua@gmail.com</li>
+          <li>Працюємо щодня</li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
   <script src="app.js"></script>
 </body>
 </html>
