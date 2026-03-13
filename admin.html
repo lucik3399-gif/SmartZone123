@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SmartZone Admin</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="admin-body">
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a href="index.html" class="logo">Smart<span>Zone</span></a>
+      <nav class="desktop-nav">
+        <a href="index.html">На сайт</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <section id="loginSection" class="auth-box glass-card">
+        <div class="section-kicker">Адмін-панель</div>
+        <h1>Вхід адміністратора</h1>
+        <p>Стандартний пароль можна змінити всередині файлу <strong>admin.js</strong>.</p>
+        <form id="loginForm" class="checkout-form small-form">
+          <input type="password" id="adminPassword" placeholder="Введіть пароль" required />
+          <button class="btn btn-primary" type="submit">Увійти</button>
+        </form>
+        <p class="muted">Пароль за замовчуванням: <strong>SmartZone2026</strong></p>
+      </section>
+
+      <section id="adminPanel" class="hidden">
+        <div class="admin-head">
+          <div>
+            <div class="section-kicker">Панель керування</div>
+            <h1>Керування магазином</h1>
+          </div>
+          <button class="btn btn-secondary" id="logoutBtn">Вийти</button>
+        </div>
+
+        <div class="admin-stats">
+          <div class="info-card"><h3 id="statProducts">0</h3><p>Товарів</p></div>
+          <div class="info-card"><h3 id="statOrders">0</h3><p>Замовлень</p></div>
+          <div class="info-card"><h3 id="statRevenue">0 ₴</h3><p>Сума замовлень</p></div>
+        </div>
+
+        <div class="admin-grid">
+          <section class="glass-card">
+            <h2 id="formTitle">Додати товар</h2>
+            <form id="productForm" class="checkout-form">
+              <input type="hidden" id="productId" />
+              <input type="text" id="productName" placeholder="Назва товару" required />
+              <input type="number" id="productPrice" placeholder="Ціна" required />
+              <input type="text" id="productImage" placeholder="Посилання на фото" required />
+              <input type="text" id="productBadge" placeholder="Мітка (Напр. Хіт продажів)" />
+              <select id="productCategory" required>
+                <option value="">Оберіть категорію</option>
+                <option>Смартфони</option>
+                <option>Навушники</option>
+                <option>Чохли</option>
+                <option>Зарядки</option>
+                <option>Аксесуари</option>
+              </select>
+              <textarea id="productDescription" rows="4" placeholder="Опис товару" required></textarea>
+              <label class="checkbox-line"><input type="checkbox" id="productPopular" /> Популярний товар</label>
+              <button class="btn btn-primary" type="submit">Зберегти товар</button>
+            </form>
+          </section>
+
+          <section class="glass-card">
+            <div class="table-head">
+              <h2>Товари</h2>
+              <button class="btn btn-secondary" id="resetProductsBtn">Скинути демо-товари</button>
+            </div>
+            <div id="adminProducts" class="admin-list"></div>
+          </section>
+        </div>
+
+        <section class="glass-card orders-section">
+          <div class="table-head">
+            <h2>Замовлення</h2>
+            <button class="btn btn-secondary" id="clearOrdersBtn">Очистити замовлення</button>
+          </div>
+          <div id="ordersList" class="admin-list"></div>
+        </section>
+      </section>
+    </div>
+  </main>
+
+  <script src="admin.js"></script>
+</body>
+</html>
