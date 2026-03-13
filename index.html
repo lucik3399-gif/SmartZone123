@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SmartZone — магазин смартфонів та аксесуарів</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a class="brand" href="index.html">📱 SmartZone</a>
+      <nav class="menu">
+        <button class="menu-link" data-category="all">Усі</button>
+        <button class="menu-link" data-category="Смартфони">Смартфони</button>
+        <button class="menu-link" data-category="Навушники">Навушники</button>
+        <button class="menu-link" data-category="Зарядки">Зарядки</button>
+        <button class="menu-link" data-category="Аксесуари">Аксесуари</button>
+      </nav>
+      <div class="nav-actions">
+        <input id="searchInput" class="search" type="search" placeholder="Пошук товарів..." />
+        <button id="cartButton" class="cart-btn">🛒 Кошик <span id="cartCount">0</span></button>
+        <a class="admin-link" href="admin.html">Адмін</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="badge">Великий розпродаж</span>
+          <h1>Сучасні смартфони та аксесуари для твого магазину SmartZone</h1>
+          <p>Готовий інтернет-магазин українською мовою з категоріями, кошиком, формою замовлення, пошуком та адмін-панеллю.</p>
+          <div class="hero-actions">
+            <a href="#catalog" class="btn btn-primary">Перейти до каталогу</a>
+            <a href="admin.html" class="btn btn-secondary">Відкрити адмінку</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <div class="stat-row">
+            <div class="stat"><strong>120+</strong><span>товарів</span></div>
+            <div class="stat"><strong>24/7</strong><span>прийом замовлень</span></div>
+          </div>
+          <div class="mini-order">
+            <h3>Швидке замовлення</h3>
+            <p>Покупець може оформити замовлення за 1 хвилину.</p>
+            <ul>
+              <li>Кошик</li>
+              <li>Телефон</li>
+              <li>Місто / доставка</li>
+              <li>Підтвердження</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container">
+      <div class="section-head">
+        <h2>Переваги магазину</h2>
+      </div>
+      <div class="features-grid">
+        <article class="feature-card"><h3>Категорії</h3><p>Зручна навігація по товарах.</p></article>
+        <article class="feature-card"><h3>Кошик</h3><p>Додавання, видалення, зміна кількості.</p></article>
+        <article class="feature-card"><h3>Замовлення</h3><p>Форма збереження заявок у адмінці.</p></article>
+        <article class="feature-card"><h3>Імпорт</h3><p>Завантаження товарів із CSV у адмін-панелі.</p></article>
+      </div>
+    </section>
+
+    <section id="catalog" class="section container">
+      <div class="section-head">
+        <h2>Каталог товарів</h2>
+        <select id="sortSelect" class="sort-select">
+          <option value="popular">Спочатку популярні</option>
+          <option value="cheap">Спочатку дешевші</option>
+          <option value="expensive">Спочатку дорожчі</option>
+          <option value="name">За назвою</option>
+        </select>
+      </div>
+      <div id="productGrid" class="product-grid"></div>
+    </section>
+  </main>
+
+  <aside id="cartDrawer" class="drawer hidden">
+    <div class="drawer-content">
+      <div class="drawer-head">
+        <h2>Кошик</h2>
+        <button id="closeCart" class="icon-btn">✕</button>
+      </div>
+      <div id="cartItems" class="cart-items"></div>
+      <div class="cart-footer">
+        <div class="cart-total">Разом: <strong id="cartTotal">0 грн</strong></div>
+        <button id="checkoutButton" class="btn btn-primary btn-full">Оформити замовлення</button>
+      </div>
+    </div>
+  </aside>
+
+  <div id="checkoutModal" class="modal hidden">
+    <div class="modal-card">
+      <div class="drawer-head">
+        <h2>Оформлення замовлення</h2>
+        <button id="closeCheckout" class="icon-btn">✕</button>
+      </div>
+      <form id="checkoutForm" class="checkout-form">
+        <input name="name" required placeholder="Ім'я" />
+        <input name="phone" required placeholder="Телефон" />
+        <input name="city" required placeholder="Місто" />
+        <input name="delivery" required placeholder="Відділення / адреса" />
+        <select name="payment" required>
+          <option value="">Оплата</option>
+          <option>Оплата при отриманні</option>
+          <option>Оплата карткою</option>
+        </select>
+        <textarea name="comment" placeholder="Коментар до замовлення"></textarea>
+        <button class="btn btn-primary btn-full" type="submit">Підтвердити замовлення</button>
+      </form>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>SmartZone</h3>
+        <p>Готовий шаблон магазину смартфонів і аксесуарів для запуску через GitHub Pages.</p>
+      </div>
+      <div>
+        <h4>Розділи</h4>
+        <a href="#catalog">Каталог</a>
+        <a href="admin.html">Адмін-панель</a>
+      </div>
+      <div>
+        <h4>Контакти</h4>
+        <p>Телефон: +380 XX XXX XX XX</p>
+        <p>Email: info@smartzone.store</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
