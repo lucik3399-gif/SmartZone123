@@ -1,0 +1,121 @@
+:root {
+  --bg: #0b0f17;
+  --panel: #121826;
+  --line: rgba(255,255,255,.08);
+  --text: #f5f7fb;
+  --muted: #a8b3c7;
+  --accent: #4f8cff;
+  --accent-2: #7b61ff;
+  --danger: #ff5d5d;
+  --success: #1bc47d;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top right, rgba(79,140,255,.25), transparent 25%),
+    radial-gradient(circle at left center, rgba(123,97,255,.18), transparent 30%),
+    linear-gradient(180deg, #090d14 0%, #0d1320 100%);
+  font-family: Arial, sans-serif;
+}
+a { color: inherit; text-decoration: none; }
+button, input, textarea, select { font: inherit; }
+.container { width: min(1240px, calc(100% - 24px)); margin: 0 auto; }
+.topbar {
+  position: sticky; top: 0; z-index: 20;
+  background: rgba(11,15,23,.75);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--line);
+}
+.nav {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 12px; padding: 14px 0; flex-wrap: wrap;
+}
+.brand { display: flex; gap: 12px; align-items: center; font-weight: 800; }
+.brand-badge {
+  width: 44px; height: 44px; border-radius: 14px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  display: grid; place-items: center;
+}
+.nav-links { display: flex; gap: 10px; flex-wrap: wrap; }
+.btn, .ghost, .danger, .field, .badge {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 12px 16px;
+}
+.btn {
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+.ghost {
+  background: rgba(255,255,255,.03);
+  color: var(--text);
+  cursor: pointer;
+}
+.danger {
+  background: rgba(255,93,93,.12);
+  color: #ffd5d5;
+  cursor: pointer;
+}
+.field {
+  background: rgba(255,255,255,.03);
+  color: var(--text);
+  width: 100%;
+}
+.hero, .section { padding: 24px 0; }
+.hero-card, .panel, .card, .order-card {
+  background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  box-shadow: 0 18px 50px rgba(0,0,0,.35);
+}
+.hero-card {
+  display: grid; grid-template-columns: 1.2fr .8fr; gap: 24px; padding: 32px;
+}
+.hero h1 { font-size: clamp(30px, 5vw, 58px); margin: 0 0 12px; }
+.hero p, .muted { color: var(--muted); }
+.grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 16px; }
+.products { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 16px; }
+.card img { width: 100%; height: 240px; object-fit: cover; border-radius: 24px 24px 0 0; }
+.card-body { padding: 16px; }
+.price { font-size: 24px; font-weight: 800; }
+.old { text-decoration: line-through; color: var(--muted); }
+.layout { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.stack { display: grid; gap: 12px; }
+.row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.phone-stack { position: relative; width: 290px; height: 290px; margin: auto; }
+.device {
+  position: absolute; width: 180px; height: 280px; border-radius: 34px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: linear-gradient(160deg, #1f293d, #0b111b);
+}
+.device.one { left: 20px; top: 20px; transform: rotate(-14deg); }
+.device.two { right: 12px; top: 0; transform: rotate(12deg); }
+.device.three { left: 56px; top: 18px; z-index: 2; }
+.section-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 16px; }
+.badge { display: inline-flex; background: rgba(255,255,255,.05); }
+.order-card { padding: 20px; }
+.status { border-radius: 999px; padding: 8px 12px; border: 1px solid var(--line); display: inline-flex; }
+.status-new { background: rgba(255,176,32,.14); }
+.status-processing { background: rgba(79,140,255,.16); }
+.status-shipped { background: rgba(123,97,255,.16); }
+.status-done { background: rgba(27,196,125,.16); }
+.status-cancelled { background: rgba(255,93,93,.16); }
+pre {
+  white-space: pre-wrap;
+  background: rgba(255,255,255,.03);
+  border: 1px solid var(--line);
+  padding: 12px;
+  border-radius: 14px;
+}
+@media (max-width: 1080px) {
+  .hero-card, .layout, .grid-3 { grid-template-columns: 1fr; }
+  .products { grid-template-columns: repeat(2, minmax(0,1fr)); }
+}
+@media (max-width: 640px) {
+  .products, .row { grid-template-columns: 1fr; }
+}
