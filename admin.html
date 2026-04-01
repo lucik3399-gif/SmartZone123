@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SmartZone Ultra Admin</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="admin-page">
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+
+  <header class="topbar glass">
+    <div class="container nav">
+      <a href="index.html" class="brand">
+        <div class="brand-badge">S</div>
+        <div>
+          <div>Admin Panel</div>
+          <small>Products Management</small>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="orders.html">Замовлення</a>
+        <a href="settings.html">Налаштування</a>
+        <a href="index.html">На сайт</a>
+        <button class="danger-btn" id="logoutBtn">Вийти</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container dashboard-head">
+      <div class="stats-grid">
+        <div class="dash-stat glass"><strong>Products</strong><span>Керування товарами</span></div>
+        <div class="dash-stat glass"><strong>Design</strong><span>Ultra Interface</span></div>
+        <div class="dash-stat glass"><strong>Store</strong><span>SmartZone Control</span></div>
+      </div>
+    </div>
+
+    <div class="container layout admin-layout">
+      <section class="panel glass">
+        <div class="section-head">
+          <div>
+            <h2>Форма товару</h2>
+            <p>Додай або онови товар у каталозі.</p>
+          </div>
+        </div>
+
+        <form class="admin-form" id="productForm">
+          <div class="row">
+            <input class="field" name="title" placeholder="Назва товару" required />
+            <input class="field" name="brand" placeholder="Бренд" required />
+          </div>
+          <div class="row">
+            <select class="field" name="category" required>
+              <option value="">Оберіть категорію</option>
+              <option value="Смартфони">Смартфони</option>
+              <option value="Навушники">Навушники</option>
+              <option value="Смарт-годинники">Смарт-годинники</option>
+              <option value="Аксесуари">Аксесуари</option>
+            </select>
+            <input class="field" name="image" placeholder="Посилання на фото" required />
+          </div>
+          <div class="row">
+            <input class="field" name="price" type="number" min="0" placeholder="Ціна" required />
+            <input class="field" name="oldPrice" type="number" min="0" placeholder="Стара ціна" />
+          </div>
+          <div class="row">
+            <input class="field" name="memory" placeholder="Пам'ять / характеристика" />
+            <input class="field" name="color" placeholder="Колір" />
+          </div>
+          <div class="row">
+            <input class="field" name="stock" type="number" min="0" placeholder="Кількість на складі" required />
+            <select class="field" name="status">
+              <option value="">Статус</option>
+              <option value="hit">Хіт</option>
+              <option value="sale">Акція</option>
+              <option value="">Без статусу</option>
+            </select>
+          </div>
+          <textarea class="field" name="description" placeholder="Опис товару" required></textarea>
+          <input type="hidden" name="productId" />
+          <button class="primary-btn" type="submit">Зберегти товар</button>
+        </form>
+      </section>
+
+      <section class="panel glass">
+        <div class="section-head">
+          <div>
+            <h2>Список товарів</h2>
+            <p>Редагуй або видаляй товари.</p>
+          </div>
+          <div class="admin-actions">
+            <button class="ghost-btn" id="exportProductsBtn">Експорт</button>
+            <button class="danger-btn" id="resetProductsBtn">Скинути</button>
+          </div>
+        </div>
+        <div class="admin-list" id="adminProducts"></div>
+      </section>
+    </div>
+  </main>
+
+  <div class="toast" id="toast">
+    <strong id="toastTitle">Готово</strong>
+    <span id="toastText">Дію виконано.</span>
+  </div>
+
+  <script src="store.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>

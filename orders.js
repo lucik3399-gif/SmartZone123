@@ -1,0 +1,103 @@
+requireAdmin();
+
+const ordersList = document.getElementById('ordersList');
+const statusFilter = document.getElementById('statusFilter');
+
+function changeOrderStatus(id, status) {
+  const orders = getOrders();
+  const order = orders.find(o => o.id === id);
+  if (!order) return;
+  order.status = status;
+  setOrders(orders);
+  renderOrders();
+  showToast('Статус оновлено', 'Замовлення ' + id + ' змінено.');
+}
+
+function deleteOrder(id) {
+  setOrders(getOrders().filter(o => o.id !== id));
+  renderOrders();
+  showToast('Замовлення видалено', id);
+}
+
+function renderOrders() {
+  let orders = getOrders();
+  const filter = statusFilter.value;
+
+  if (filter !== 'all') orders = orders.filter(order => order.status === filter);
+
+  if (!orders.length) {
+    ordersList.innerHTML = '<div class="empty">Замовлень поки немає.</div>';
+    return;
+  }
+
+  ordersList.innerHTML = orders.map(order => `
+    <div class="order-card glass">
+      <div class="order-top">
+        <div>
+          <strong style="font-size:20px;">${order.id}</strong>
+          <div class="meta" style="margin-top:8px;">${new Date(order.createdAt).toLocaleString('uk-UA')}</div>
+        </div>
+        <div class="status-badge ${statusClass(order.status)}">${statusLabel(order.status)}</div>
+      </div>
+
+      <div class="order-grid">
+        <div class="panel glass">
+          <strong>Клієнт</strong>
+          <p style="margin-top:8px;">${order.customer.name || '—'}</p>
+          <p>${order.customer.phone || '—'}</p>
+          <p>${order.customer.city || '—'}</p>
+          <p>${order.customer.email || '—'}</p>
+          <p>Коментар: ${order.customer.comment || 'Немає'}</p>
+        </div>
+        <div class="panel glass">
+          <strong>Дані замовлення</strong>
+          <p style="margin-top:8px;">Тип: ${order.type === 'cart' ? 'Кошик' : 'Швидка заявка'}</p>
+          <p>Сума: ${formatPrice(order.total || 0)}</p>
+          <div style="display:grid; gap:10px; margin-top:12px;">
+            <select class="field" onchange="changeOrderStatus('${order.id}', this.value)">
+              <option value="new" ${order.status === 'new' ? 'selected' : ''}>Нове</option>
+              <option value="processing" ${order.status === 'processing' ? 'selected' : ''}>В обробці</option>
+              <option value="shipped" ${order.status === 'shipped' ? 'selected' : ''}>Відправлено</option>
+              <option value="done" ${order.status === 'done' ? 'selected' : ''}>Завершено</option>
+              <option value="cancelled" ${order.status === 'cancelled' ? 'selected' : ''}>Скасовано</option>
+            </select>
+            <button class="danger-btn" onclick="deleteOrder('${order.id}')">Видалити замовлення</button>
+          </div>
+        </div>
+      </div>
+
+      ${order.items && order.items.length ? `
+        <div class="order-items">
+          <strong>Товари</strong>
+          ${order.items.map(item => `<div class="meta">${item.title} • ${item.qty} шт • ${formatPrice(item.total)}</div>`).join('')}
+        </div>
+      ` : ''}
+    </div>
+  `).join('');
+}
+
+document.getElementById('logoutBtn').addEventListener('click', () => {
+  logoutAdmin();
+  window.location.href = 'admin-login.html';
+});
+document.getElementById('exportOrdersBtn').addEventListener('click', () => {
+  const blob = new Blob([JSON.stringify(getOrders(), null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'smartzone-orders.json';
+  a.click();
+  URL.revokeObjectURL(url);
+  showToast('Експорт готовий', 'Файл замовлень завантажено.');
+});
+document.getElementById('clearOrdersBtn').addEventListener('click', () => {
+  setOrders([]);
+  renderOrders();
+  showToast('Готово', 'Усі замовлення очищено.');
+});
+statusFilter.addEventListener('change', renderOrders);
+
+renderOrders();
+
+window.changeOrderStatus = changeOrderStatus;
+window.deleteOrder = deleteOrder;
