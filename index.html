@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SmartZone Ultimate — магазин смартфонів та аксесуарів</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+  <div class="bg-grid"></div>
+
+  <header class="topbar glass">
+    <div class="container nav">
+      <a href="#top" class="brand" id="brandLink">
+        <div class="brand-badge">S</div>
+        <div>
+          <div>SmartZone Ultimate</div>
+          <small>Premium electronics store</small>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#catalog">Каталог</a>
+        <a href="#collections">Колекції</a>
+        <a href="#experience">Переваги</a>
+        <a href="#reviews">Відгуки</a>
+        <a href="track-order.html">Статус</a>
+        <button class="icon-btn" id="wishlistBtn">♡ <span id="wishlistCount">0</span></button>
+        <button class="icon-btn" id="themeToggleBtn">☼</button>
+        <button class="icon-btn" id="openCartBtn">Кошик <span id="cartCount">0</span></button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero hero-ultra">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <div class="mini-badge">⚡ ULTIMATE VERSION</div>
+          <h1>Магазин, який виглядає як бренд і продає як великий маркетплейс</h1>
+          <p>
+            Преміальний дизайн, wishlist, промокоди, розумні фільтри, рекомендації,
+            замовлення, окрема прихована адмінка, відстеження статусу та покращений UX.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#catalog" class="primary-btn">Дивитися каталог</a>
+            <a href="track-order.html" class="ghost-btn">Перевірити замовлення</a>
+          </div>
+
+          <div class="hero-metrics">
+            <div class="metric glass">
+              <strong>Ultimate</strong>
+              <span>UX + продажі</span>
+            </div>
+            <div class="metric glass">
+              <strong>Smart</strong>
+              <span>Wishlist + промокод</span>
+            </div>
+            <div class="metric glass">
+              <strong>Hidden</strong>
+              <span>Прихована адмінка</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="showcase-card glass">
+            <div class="showcase-ring"></div>
+            <div class="phone phone-left"></div>
+            <div class="phone phone-center"></div>
+            <div class="phone phone-right"></div>
+            <div class="floating-tag glass">Premium UI</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="collections">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Колекції та акценти</h2>
+            <p>Блоки, які створюють ефект великого дорогого магазину.</p>
+          </div>
+        </div>
+
+        <div class="collection-grid">
+          <article class="collection-card glass glow-blue">
+            <span class="mini-badge">Flagship</span>
+            <h3>Смартфони преміум-класу</h3>
+            <p>Флагмани Apple, Samsung, Xiaomi та інші топові моделі.</p>
+          </article>
+
+          <article class="collection-card glass glow-purple">
+            <span class="mini-badge">Audio</span>
+            <h3>Навушники та звук</h3>
+            <p>Бездротові навушники, ANC, стильний дизайн і висока якість звуку.</p>
+          </article>
+
+          <article class="collection-card glass glow-gold">
+            <span class="mini-badge">Power</span>
+            <h3>Аксесуари та зарядка</h3>
+            <p>Павербанки, кабелі, чохли, зарядні пристрої та дрібні гаджети.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="catalog">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Каталог товарів</h2>
+            <p>Розумні фільтри, wishlist, рекомендації і сучасний UI.</p>
+          </div>
+        </div>
+
+        <div class="filters glass advanced-filters">
+          <input class="field" id="searchInput" placeholder="Пошук товару... iPhone, Samsung, навушники" />
+          <select class="field" id="sortSelect">
+            <option value="popular">Сортування: популярні</option>
+            <option value="cheap">Спочатку дешевші</option>
+            <option value="expensive">Спочатку дорожчі</option>
+            <option value="name">За назвою</option>
+          </select>
+          <select class="field" id="stockSelect">
+            <option value="all">Наявність: всі</option>
+            <option value="in">Є в наявності</option>
+            <option value="out">Немає в наявності</option>
+          </select>
+          <select class="field" id="brandSelect">
+            <option value="all">Бренд: всі</option>
+          </select>
+          <select class="field" id="priceSelect">
+            <option value="all">Ціна: всі</option>
+            <option value="0-5000">До 5 000 грн</option>
+            <option value="5000-15000">5 000–15 000 грн</option>
+            <option value="15000-35000">15 000–35 000 грн</option>
+            <option value="35000-1000000">Від 35 000 грн</option>
+          </select>
+          <button class="ghost-btn" id="resetFiltersBtn">Скинути</button>
+        </div>
+
+        <div class="categories" id="categoryChips"></div>
+        <div class="products ultra-products" id="productsGrid"></div>
+      </div>
+    </section>
+
+    <section class="section" id="experience">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Що вже прокачано</h2>
+            <p>Не просто магазин, а сильний інструмент для продажів.</p>
+          </div>
+        </div>
+
+        <div class="benefit-grid">
+          <article class="benefit-card glass">
+            <h3>✨ Premium UI</h3>
+            <p>Скляні панелі, тіні, градієнти, hover-ефекти та красиві картки.</p>
+          </article>
+          <article class="benefit-card glass">
+            <h3>🛒 Smart Checkout</h3>
+            <p>Кошик, промокод, підрахунок знижки, швидке оформлення.</p>
+          </article>
+          <article class="benefit-card glass">
+            <h3>🔐 Hidden Admin</h3>
+            <p>Прихований вхід, окремі сторінки товарів, замовлень і налаштувань.</p>
+          </article>
+        </div>
+
+        <div class="panel glass checkout-panel">
+          <div>
+            <h3>Швидке оформлення замовлення</h3>
+            <p>Після оформлення клієнт отримує номер замовлення для перевірки статусу.</p>
+          </div>
+
+          <form class="order-form" id="quickOrderForm">
+            <div class="row">
+              <input class="field" name="name" placeholder="Ваше ім'я" required />
+              <input class="field" name="phone" placeholder="Телефон" required />
+            </div>
+            <div class="row">
+              <input class="field" name="city" placeholder="Місто" required />
+              <input class="field" name="email" type="email" placeholder="Email" />
+            </div>
+            <textarea class="field" name="comment" placeholder="Коментар до замовлення"></textarea>
+            <button class="primary-btn" type="submit">Оформити швидке замовлення</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="reviews">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Відгуки покупців</h2>
+            <p>Блок довіри для кращої конверсії.</p>
+          </div>
+        </div>
+        <div class="review-grid">
+          <article class="review-card glass">
+            <strong>Олена</strong>
+            <div class="stars">★★★★★</div>
+            <p>Дуже стильний магазин. Замовлення оформила за хвилину, все зрозуміло.</p>
+          </article>
+          <article class="review-card glass">
+            <strong>Андрій</strong>
+            <div class="stars">★★★★★</div>
+            <p>Гарні картки товарів і зручна сторінка перевірки статусу замовлення.</p>
+          </article>
+          <article class="review-card glass">
+            <strong>Ірина</strong>
+            <div class="stars">★★★★★</div>
+            <p>Подобається темний преміальний стиль, виглядає набагато дорожче.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-card glass">
+      <div>
+        <strong>SmartZone Ultimate</strong>
+        <p>Покупці бачать тільки магазин. Вхід в адмінку прихований.</p>
+      </div>
+      <div class="footer-links">
+        <a href="track-order.html">Статус замовлення</a>
+      </div>
+    </div>
+  </footer>
+
+  <button class="hidden-admin-trigger" id="hiddenAdminTrigger" aria-label="Admin access" title="Admin">
+    <span>◆</span>
+  </button>
+
+  <div class="modal" id="productModal">
+    <div class="overlay" data-close="productModal"></div>
+    <div class="modal-content glass">
+      <button class="icon-btn close-btn" data-close="productModal">✕</button>
+      <div class="product-view" id="productView"></div>
+    </div>
+  </div>
+
+  <div class="drawer" id="cartDrawer">
+    <div class="overlay" data-close="cartDrawer"></div>
+    <div class="drawer-panel glass">
+      <div class="section-head">
+        <div>
+          <h2>Кошик</h2>
+          <p>Товари, промокод і оформлення замовлення.</p>
+        </div>
+        <button class="icon-btn" data-close="cartDrawer">✕</button>
+      </div>
+
+      <div id="cartItems"></div>
+
+      <div class="promo-box glass">
+        <div class="promo-row">
+          <input class="field" id="promoInput" placeholder="Промокод: SMART10 або POWER5" />
+          <button class="ghost-btn" id="applyPromoBtn">Застосувати</button>
+        </div>
+        <small id="promoMessage">Доступні демо-коди: SMART10, POWER5</small>
+      </div>
+
+      <div class="summary">
+        <div class="summary-row"><span>Товари</span><strong id="summaryItems">0</strong></div>
+        <div class="summary-row"><span>Сума</span><strong id="summarySubtotal">0 грн</strong></div>
+        <div class="summary-row"><span>Знижка</span><strong id="summaryDiscount">0 грн</strong></div>
+        <div class="summary-row"><span>Доставка</span><strong>Безкоштовно</strong></div>
+        <div class="summary-row total"><span>Разом</span><strong id="summaryTotal">0 грн</strong></div>
+      </div>
+
+      <form class="order-form" id="cartOrderForm">
+        <div class="row">
+          <input class="field" name="name" placeholder="Ваше ім'я" required />
+          <input class="field" name="phone" placeholder="Телефон" required />
+        </div>
+        <div class="row">
+          <input class="field" name="city" placeholder="Місто" required />
+          <input class="field" name="email" type="email" placeholder="Email" />
+        </div>
+        <textarea class="field" name="comment" placeholder="Коментар до замовлення"></textarea>
+        <button class="primary-btn" type="submit">Оформити замовлення</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="drawer" id="wishlistDrawer">
+    <div class="overlay" data-close="wishlistDrawer"></div>
+    <div class="drawer-panel glass">
+      <div class="section-head">
+        <div>
+          <h2>Список бажань</h2>
+          <p>Збережені товари для повернення пізніше.</p>
+        </div>
+        <button class="icon-btn" data-close="wishlistDrawer">✕</button>
+      </div>
+      <div id="wishlistItems"></div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast">
+    <strong id="toastTitle">Готово</strong>
+    <span id="toastText">Дію виконано.</span>
+  </div>
+
+  <script src="store.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

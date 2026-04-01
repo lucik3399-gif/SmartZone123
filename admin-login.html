@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SmartZone Ultimate Admin Login</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="admin-page">
+  <div class="bg-orb orb-1"></div>
+  <div class="bg-orb orb-2"></div>
+  <main class="center-screen">
+    <div class="login-shell glass">
+      <div class="mini-badge">Admin Access</div>
+      <h1>Вхід в SmartZone Admin</h1>
+      <p>Окрема сторінка входу для керування магазином.</p>
+
+      <form class="admin-form" id="adminLoginForm">
+        <input class="field" id="adminUsername" placeholder="Логін" required />
+        <input class="field" id="adminPassword" type="password" placeholder="Пароль" required />
+        <button class="primary-btn" type="submit">Увійти</button>
+      </form>
+
+      <div class="glass info-card">
+        <strong>Стартовий доступ</strong>
+        <p>Логін: <code>admin</code><br>Пароль: <code>1234</code></p>
+      </div>
+
+      <a class="ghost-btn full-btn" href="index.html">← Повернутися на сайт</a>
+    </div>
+  </main>
+
+  <div class="toast" id="toast">
+    <strong id="toastTitle">Готово</strong>
+    <span id="toastText">Дію виконано.</span>
+  </div>
+
+  <script src="store.js"></script>
+  <script src="admin-login.js"></script>
+</body>
+</html>
