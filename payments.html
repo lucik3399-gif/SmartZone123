@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Платіжні системи — SmartZone</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container header-main">
+      <a href="admin.html" class="logo">
+        <div class="logo-badge">S</div>
+        <div class="logo-text">
+          <strong>Платіжні системи</strong>
+          <small>Керування оплатами</small>
+        </div>
+      </a>
+      <div></div>
+      <div class="header-actions">
+        <a class="soft-btn" href="admin.html">Товари</a>
+        <a class="soft-btn" href="orders.html">Замовлення</a>
+        <a class="soft-btn" href="site-builder-advanced.html">Конструктор</a>
+        <a class="soft-btn" href="index.html">На сайт</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>Додавання платіжних систем</h2>
+          <p class="muted">Тут можна вмикати, вимикати і додавати способи оплати для сайту.</p>
+        </div>
+      </div>
+
+      <div class="admin-layout">
+        <section class="panel">
+          <h2>Додати або змінити спосіб оплати</h2>
+          <form class="admin-form" id="paymentForm">
+            <input class="field" name="name" placeholder="Назва способу оплати" required />
+            <input class="field" name="id" placeholder="Код способу оплати, наприклад liqpay" required />
+            <select class="field" name="type">
+              <option value="offline">Офлайн оплата</option>
+              <option value="online">Онлайн оплата</option>
+            </select>
+            <textarea class="field" name="description" placeholder="Опис способу оплати"></textarea>
+            <input class="field" name="recipient" placeholder="Отримувач платежу" />
+            <input class="field" name="cardNumber" placeholder="Номер картки" />
+            <input class="field" name="iban" placeholder="IBAN / рахунок" />
+            <textarea class="field" name="instructions" placeholder="Інструкція для покупця після вибору оплати"></textarea>
+            <label><input type="checkbox" name="enabled" checked /> Увімкнути спосіб оплати</label>
+            <button class="main-btn" type="submit">Зберегти спосіб оплати</button>
+          </form>
+        </section>
+
+        <section class="panel">
+          <div class="section-head">
+            <div>
+              <h2>Список платіжних систем</h2>
+              <p class="muted">Те, що тут увімкнено, покупець бачить при оформленні замовлення.</p>
+            </div>
+          </div>
+          <div class="admin-list" id="paymentsList"></div>
+        </section>
+      </div>
+
+      <div class="panel" style="margin-top:18px;">
+        <strong>Приклади</strong>
+        <p class="muted">Можна додати: LiqPay, WayForPay, Fondy, готівка, післяплата, оплата за реквізитами.</p>
+      </div>
+    </div>
+  </main>
+
+  <div class="toast" id="toast">
+    <strong id="toastTitle">Готово</strong>
+    <span id="toastText">Дію виконано.</span>
+  </div>
+
+  <script src="store.js"></script>
+  <script src="payments.js"></script>
+</body>
+</html>

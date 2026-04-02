@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Редактор сайту SmartZone</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container header-main">
+      <a href="admin.html" class="logo">
+        <div class="logo-badge">S</div>
+        <div class="logo-text">
+          <strong>Редактор сайту</strong>
+          <small>Керування всім вмістом</small>
+        </div>
+      </a>
+      <div></div>
+      <div class="header-actions">
+        <a class="soft-btn" href="admin.html">Товари</a>
+        <a class="soft-btn" href="orders.html">Замовлення</a>
+        <a class="soft-btn" href="settings.html">Налаштування</a><a class="soft-btn" href="payments.html">Оплати</a><a class="soft-btn" href="site-builder.html">Редактор сайту</a><a class="soft-btn" href="site-builder-advanced.html">Конструктор</a>
+        <a class="soft-btn" href="index.html">На сайт</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>Редагування всього сайту</h2>
+          <p class="muted">Тут можна міняти тексти, банери, сервіси, відгуки, контакти та картки категорій.</p>
+        </div>
+      </div>
+
+      <div class="admin-layout">
+        <section class="panel">
+          <h2>Основне</h2>
+          <form class="admin-form" id="siteSettingsForm">
+            <input class="field" name="siteName" placeholder="Назва сайту" />
+            <input class="field" name="siteTagline" placeholder="Підзаголовок сайту" />
+            <input class="field" name="heroBadge" placeholder="Бейдж hero-блоку" />
+            <input class="field" name="heroTitle" placeholder="Головний заголовок" />
+            <textarea class="field" name="heroText" placeholder="Текст під головним заголовком"></textarea>
+
+            <h3>Промо блоки</h3>
+            <input class="field" name="promo1Title" placeholder="Промо 1 заголовок" />
+            <input class="field" name="promo1Text" placeholder="Промо 1 текст" />
+            <input class="field" name="promo2Title" placeholder="Промо 2 заголовок" />
+            <input class="field" name="promo2Text" placeholder="Промо 2 текст" />
+            <input class="field" name="promo3Title" placeholder="Промо 3 заголовок" />
+            <input class="field" name="promo3Text" placeholder="Промо 3 текст" />
+
+            <h3>Футер і контакти</h3>
+            <textarea class="field" name="footerText" placeholder="Текст футера"></textarea>
+            <input class="field" name="contactsPhone" placeholder="Телефон" />
+            <input class="field" name="contactsEmail" placeholder="Email" />
+            <input class="field" name="contactsCity" placeholder="Місто" />
+
+            <button class="main-btn" type="submit">Зберегти зміни сайту</button>
+          </form>
+        </section>
+
+        <section class="panel">
+          <h2>Категорії, сервіси і відгуки</h2>
+          <p class="muted">Кожен рядок з нового рядка.</p>
+
+          <form class="admin-form" id="extraContentForm">
+            <label><strong>Категорії</strong></label>
+            <textarea class="field" name="categoryTiles" placeholder="Смартфони|Новинки, флагмани, хіти продажів&#10;Навушники|ANC, TWS, преміальний звук"></textarea>
+
+            <label><strong>Сервіси</strong></label>
+            <textarea class="field" name="services" placeholder="🚚 Швидка доставка|По Україні за кілька днів&#10;💳 Зручна оплата|Готівка або післяплата"></textarea>
+
+            <label><strong>Відгуки</strong></label>
+            <textarea class="field" name="reviews" placeholder="Марія|Виглядає дуже серйозно, як великий магазин техніки.&#10;Віталій|Зручно шукати товари і сортувати по бренду та ціні."></textarea>
+
+            <button class="main-btn" type="submit">Зберегти блоки</button>
+          </form>
+
+          <div class="panel" style="margin-top:16px;">
+            <strong>Порада</strong>
+            <p class="muted">Формат для рядків: <code>Назва|Опис</code></p>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <div class="toast" id="toast">
+    <strong id="toastTitle">Готово</strong>
+    <span id="toastText">Дію виконано.</span>
+  </div>
+
+  <script src="store.js"></script>
+  <script src="site-builder.js"></script>
+</body>
+</html>

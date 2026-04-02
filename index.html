@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SmartZone Max — маркетплейс електроніки</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="topline" id="toplineSection">
+    <div class="container topline-inner">
+      <span>⚡ Щоденні акції</span>
+      <span>🚚 Доставка по Україні</span>
+      <span>🛡 Офіційна гарантія</span>
+      <span>💬 Підтримка 7 днів на тиждень</span>
+    </div>
+  </div>
+
+  <header class="header">
+    <div class="container header-main">
+      <a href="#top" class="logo" id="brandLink">
+        <div class="logo-badge">S</div>
+        <div class="logo-text">
+          <strong>SmartZone</strong>
+          <small>маркет техніки</small>
+        </div>
+      </a>
+
+      <button class="catalog-btn">☰ Каталог</button>
+
+      <div class="search-wrap">
+        <input id="searchInput" class="search-input" placeholder="Пошук товарів: смартфон, навушники, павербанк..." />
+        <button class="search-btn">Знайти</button>
+      </div>
+
+      <div class="header-actions">
+        <a class="icon-btn account-link-btn" id="accountBtn" href="account.html">👤 Кабінет</a>
+        <button class="icon-btn" id="wishlistBtn">♡ <span id="wishlistCount">0</span></button>
+        <button class="cart-btn" id="openCartBtn">🛒 Кошик <span id="cartCount">0</span></button>
+      </div>
+    </div>
+
+    <div class="container header-subnav">
+      <a href="#promo">Акції</a>
+      <a href="#hits">Хіти продажів</a>
+      <a href="#catalog-section">Каталог</a>
+      <a href="#services">Сервіси</a>
+      <a href="#reviews">Відгуки</a>
+      <a href="track-order.html">Статус замовлення</a>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero cms-section" id="heroSection" data-section="hero">
+      <div class="container hero-grid">
+        <aside class="left-menu">
+          <button class="menu-link active">📱 Смартфони</button>
+          <button class="menu-link">🎧 Навушники</button>
+          <button class="menu-link">⌚ Смарт-годинники</button>
+          <button class="menu-link">🔋 Аксесуари</button>
+          <button class="menu-link">🎁 Подарунки</button>
+          <button class="menu-link">🔥 Акції</button>
+          <button class="menu-link">⭐ Топ продажів</button>
+        </aside>
+
+        <div class="hero-banner">
+          <div class="hero-copy">
+            <div class="hero-badge">SMARTZONE MAX</div>
+            <h1>Великий маркетплейс-стиль для твого магазину</h1>
+            <p>
+              Велика шапка, дерево категорій, банери, хіти продажів,
+              каталог із лівими фільтрами, вибране, кошик, швидке замовлення і прихована адмінка.
+            </p>
+            <div class="hero-actions">
+              <a class="main-btn" href="#catalog-section">Перейти в каталог</a>
+              <a class="soft-btn" href="track-order.html">Перевірити замовлення</a>
+            </div>
+          </div>
+          <div class="hero-visual" id="heroVisual">
+            <div class="hero-media-card big"><img id="heroImage1" alt="hero image 1" /></div>
+            <div class="hero-media-card small left"><img id="heroImage2" alt="hero image 2" /></div>
+            <div class="hero-media-card small right"><img id="heroImage3" alt="hero image 3" /></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="promo cms-section" id="promoSection">
+      <div class="container promo-grid">
+        <article class="promo-card green">
+          <span>Акції тижня</span>
+          <strong>Знижки на смартфони</strong>
+          <p>Спеціальні ціни на популярні моделі</p>
+        </article>
+        <article class="promo-card orange">
+          <span>Промокоди</span>
+          <strong>SMART10 і POWER5</strong>
+          <p>Додавай промокод у кошику</p>
+        </article>
+        <article class="promo-card blue">
+          <span>Доставка</span>
+          <strong>По всій Україні</strong>
+          <p>Зручне оформлення і перевірка статусу</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="categories-showcase cms-section" id="categoriesSection">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Популярні категорії</h2>
+            <p>Великі плитки, як у великого магазину.</p>
+          </div>
+        </div>
+        <div class="category-tiles">
+          <article class="tile"><strong>Смартфони</strong><span>Новинки, флагмани, хіти продажів</span></article>
+          <article class="tile"><strong>Навушники</strong><span>ANC, TWS, преміальний звук</span></article>
+          <article class="tile"><strong>Смарт-годинники</strong><span>Для спорту, дзвінків і стилю</span></article>
+          <article class="tile"><strong>Аксесуари</strong><span>Павербанки, чохли, зарядки</span></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="hits cms-section" id="hitsSection">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Хіти продажів</h2>
+            <p>Найцікавіші товари на головній сторінці.</p>
+          </div>
+        </div>
+        <div class="products hits-grid" id="hitsGrid"></div>
+      </div>
+    </section>
+
+    <section class="services cms-section" id="servicesSection">
+      <div class="container service-grid">
+        <article class="service-card"><strong>🚚 Швидка доставка</strong><span>По Україні за кілька днів</span></article>
+        <article class="service-card"><strong>💳 Зручна оплата</strong><span>Готівка або післяплата</span></article>
+        <article class="service-card"><strong>🛡 Гарантія</strong><span>На смартфони і аксесуари</span></article>
+        <article class="service-card"><strong>📦 Відстеження</strong><span>Статус замовлення онлайн</span></article>
+      </div>
+    </section>
+
+    <section class="catalog-layout cms-section" id="catalogSection">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Каталог товарів</h2>
+            <p>Ліві фільтри, список брендів і ціни як у великого маркетплейсу.</p>
+          </div>
+        </div>
+
+        <div class="catalog-grid">
+          <aside class="filters-sidebar">
+            <div class="filter-box">
+              <strong>Категорії</strong>
+              <div class="categories vertical" id="categoryChips"></div>
+            </div>
+
+            <div class="filter-box">
+              <strong>Пошук</strong>
+              <input class="field" id="sidebarSearchInput" placeholder="Введи назву товару" />
+            </div>
+
+            <div class="filter-box">
+              <strong>Сортування</strong>
+              <select class="field" id="sortSelect">
+                <option value="popular">Популярні</option>
+                <option value="cheap">Спочатку дешевші</option>
+                <option value="expensive">Спочатку дорожчі</option>
+                <option value="name">За назвою</option>
+              </select>
+            </div>
+
+            <div class="filter-box">
+              <strong>Наявність</strong>
+              <select class="field" id="stockSelect">
+                <option value="all">Усі товари</option>
+                <option value="in">Є в наявності</option>
+                <option value="out">Немає в наявності</option>
+              </select>
+            </div>
+
+            <div class="filter-box">
+              <strong>Бренд</strong>
+              <select class="field" id="brandSelect">
+                <option value="all">Усі бренди</option>
+              </select>
+            </div>
+
+            <div class="filter-box">
+              <strong>Ціна</strong>
+              <select class="field" id="priceSelect">
+                <option value="all">Усі ціни</option>
+                <option value="0-5000">До 5 000 грн</option>
+                <option value="5000-15000">5 000–15 000 грн</option>
+                <option value="15000-35000">15 000–35 000 грн</option>
+                <option value="35000-1000000">Від 35 000 грн</option>
+              </select>
+            </div>
+
+            <button class="soft-btn full-btn" id="resetFiltersBtn">Скинути всі фільтри</button>
+          </aside>
+
+          <div class="catalog-main">
+            <div class="toolbar">
+              <div class="toolbar-badges">
+                <span class="toolbar-badge">✅ Оригінальні товари</span>
+                <span class="toolbar-badge">🚚 Швидка доставка</span>
+                <span class="toolbar-badge">💳 Зручна оплата</span>
+              </div>
+            </div>
+            <div class="products" id="productsGrid"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="quick-order cms-section" id="quickOrderSection">
+      <div class="container">
+        <div class="quick-order-panel">
+          <div class="order-copy">
+            <h3>Швидке оформлення замовлення</h3>
+            <p>Покупець залишає дані за кілька секунд і отримує номер замовлення.</p>
+          </div>
+
+          <form class="order-form" id="quickOrderForm">
+            <div class="row">
+              <input class="field" name="name" placeholder="Ваше ім'я" required />
+              <input class="field" name="phone" placeholder="Телефон" required />
+            </div>
+            <div class="row">
+              <input class="field" name="city" placeholder="Місто" required />
+              <input class="field" name="email" type="email" placeholder="Email" />
+            </div>
+            <textarea class="field" name="comment" placeholder="Коментар до замовлення"></textarea>
+            <select class="field" name="paymentMethod" id="quickPaymentMethodSelect"></select>
+            <button class="main-btn" type="submit">Оформити швидке замовлення</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="reviews cms-section" id="reviewsSection">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Відгуки покупців</h2>
+            <p>Ще один сильний блок довіри.</p>
+          </div>
+        </div>
+        <div class="review-grid">
+          <article class="review-card"><strong>Марія</strong><div class="stars">★★★★★</div><p>Виглядає дуже серйозно, як великий магазин техніки.</p></article>
+          <article class="review-card"><strong>Віталій</strong><div class="stars">★★★★★</div><p>Зручно шукати товари і сортувати по бренду та ціні.</p></article>
+          <article class="review-card"><strong>Наталія</strong><div class="stars">★★★★★</div><p>Дуже сподобалась головна сторінка з банерами і хітами продажів.</p></article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <strong id="footerBrand">SmartZone Max</strong>
+        <p id="footerTextNode">Український маркетплейс електроніки з прихованою адмінкою.</p>
+        <div class="footer-contact-list">
+          <span id="footerPhone">+38 (000) 000-00-00</span>
+          <span id="footerEmail">smartzone@example.com</span>
+          <span id="footerCity">Львів</span>
+        </div>
+      </div>
+      <div>
+        <strong>Покупцю</strong>
+        <a href="#catalog-section">Каталог</a>
+        <a href="track-order.html">Статус замовлення</a>
+      </div>
+      <div>
+        <strong>Соцмережі</strong>
+        <a href="#" id="footerInstagram">Instagram</a>
+        <a href="#" id="footerTelegram">Telegram</a>
+        <a href="#" id="footerFacebook">Facebook</a>
+      </div>
+    </div>
+  </footer>
+
+  <button class="hidden-admin-trigger" id="hiddenAdminTrigger" aria-label="Admin access" title="Admin">
+    <span>◆</span>
+  </button>
+
+  <div class="modal" id="productModal">
+    <div class="overlay" data-close="productModal"></div>
+    <div class="modal-content">
+      <button class="icon-btn close-btn" data-close="productModal">✕</button>
+      <div class="product-view" id="productView"></div>
+    </div>
+  </div>
+
+  <div class="drawer" id="cartDrawer">
+    <div class="overlay" data-close="cartDrawer"></div>
+    <div class="drawer-panel">
+      <div class="section-head">
+        <div>
+          <h2>Кошик</h2>
+          <p>Товари, промокод і оформлення замовлення.</p>
+        </div>
+        <button class="icon-btn" data-close="cartDrawer">✕</button>
+      </div>
+
+      <div id="cartItems"></div>
+
+      <div class="promo-box">
+        <div class="promo-row">
+          <input class="field" id="promoInput" placeholder="Промокод: SMART10 або POWER5" />
+          <button class="ghost-btn" id="applyPromoBtn">Застосувати</button>
+        </div>
+        <small id="promoMessage">Доступні демо-коди: SMART10, POWER5</small>
+      </div>
+
+      <div class="summary">
+        <div class="summary-row"><span>Товари</span><strong id="summaryItems">0</strong></div>
+        <div class="summary-row"><span>Сума</span><strong id="summarySubtotal">0 грн</strong></div>
+        <div class="summary-row"><span>Знижка</span><strong id="summaryDiscount">0 грн</strong></div>
+        <div class="summary-row"><span>Доставка</span><strong>Безкоштовно</strong></div>
+        <div class="summary-row total"><span>Разом</span><strong id="summaryTotal">0 грн</strong></div>
+      </div>
+
+      <form class="order-form" id="cartOrderForm">
+        <div class="row">
+          <input class="field" name="name" placeholder="Ваше ім'я" required />
+          <input class="field" name="phone" placeholder="Телефон" required />
+        </div>
+        <div class="row">
+          <input class="field" name="city" placeholder="Місто" required />
+          <input class="field" name="email" type="email" placeholder="Email" />
+        </div>
+        <textarea class="field" name="comment" placeholder="Коментар до замовлення"></textarea>
+        <select class="field" name="paymentMethod" id="paymentMethodSelect"></select>
+        <button class="main-btn" type="submit">Оформити замовлення</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="drawer" id="wishlistDrawer">
+    <div class="overlay" data-close="wishlistDrawer"></div>
+    <div class="drawer-panel">
+      <div class="section-head">
+        <div>
+          <h2>Список бажань</h2>
+          <p>Збережені товари для повернення пізніше.</p>
+        </div>
+        <button class="icon-btn" data-close="wishlistDrawer">✕</button>
+      </div>
+      <div id="wishlistItems"></div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast">
+    <strong id="toastTitle">Готово</strong>
+    <span id="toastText">Дію виконано.</span>
+  </div>
+
+  <script src="store.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

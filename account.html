@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Кабінет користувача — SmartZone</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="topline">
+    <div class="container topline-inner">
+      <span>👤 Кабінет користувача</span>
+      <span>📦 Історія замовлень</span>
+      <span>♡ Список бажань</span>
+      <span>⚙ Збережені дані</span>
+    </div>
+  </div>
+
+  <header class="header">
+    <div class="container header-main">
+      <a href="index.html" class="logo">
+        <div class="logo-badge">S</div>
+        <div class="logo-text">
+          <strong>SmartZone</strong>
+          <small>кабінет користувача</small>
+        </div>
+      </a>
+
+      <div></div>
+
+      <div class="header-actions">
+        <a class="soft-btn" href="index.html">На головну</a>
+        <a class="cart-btn" href="track-order.html">Статус замовлення</a><a class="soft-btn" href="payment-info.html">Оплата</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="account-page">
+    <div class="container account-grid">
+      <aside class="account-sidebar">
+        <div class="account-user-top">
+          <div class="account-avatar" id="accountAvatar">U</div>
+          <div>
+            <strong id="accountUserName">Користувач</strong>
+            <div class="muted" id="accountUserEmail">email не вказано</div>
+          </div>
+        </div>
+
+        <div class="account-menu">
+          <button class="active" data-tab="profile">Профіль</button>
+          <button data-tab="orders">Мої замовлення</button>
+          <button data-tab="wishlist">Список бажань</button>
+        </div>
+      </aside>
+
+      <div class="account-main">
+        <div class="account-stats">
+          <div class="account-stat">
+            <strong id="ordersCount">0</strong>
+            <span>Усього замовлень</span>
+          </div>
+          <div class="account-stat">
+            <strong id="wishlistCountStat">0</strong>
+            <span>У списку бажань</span>
+          </div>
+          <div class="account-stat">
+            <strong id="totalSpent">0 грн</strong>
+            <span>Сума замовлень</span>
+          </div>
+        </div>
+
+        <section class="account-panel" id="profileSection">
+          <h2>Мій профіль</h2>
+          <p class="muted">Збережи дані, щоб оформляти замовлення швидше.</p>
+
+          <form class="admin-form" id="profileForm">
+            <div class="row">
+              <input class="field" name="name" placeholder="Ваше ім'я" required />
+              <input class="field" name="phone" placeholder="Телефон" required />
+            </div>
+            <div class="row">
+              <input class="field" name="email" type="email" placeholder="Email" />
+              <input class="field" name="city" placeholder="Місто" />
+            </div>
+            <textarea class="field" name="address" placeholder="Адреса або примітка для доставки"></textarea>
+            <button class="main-btn" type="submit">Зберегти профіль</button>
+          </form>
+        </section>
+
+        <section class="account-panel hidden-section" id="ordersSection">
+          <h2>Мої замовлення</h2>
+          <p class="muted">Тут зберігається історія оформлених замовлень.</p>
+          <div id="accountOrdersList"></div>
+        </section>
+
+        <section class="account-panel hidden-section" id="wishlistSection">
+          <h2>Список бажань</h2>
+          <p class="muted">Товари, які ти зберіг для пізнішого перегляду.</p>
+          <div id="accountWishlistList"></div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <div class="toast" id="toast">
+    <strong id="toastTitle">Готово</strong>
+    <span id="toastText">Дію виконано.</span>
+  </div>
+
+  <script src="store.js"></script>
+  <script src="account.js"></script>
+</body>
+</html>

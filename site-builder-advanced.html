@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Конструктор сайту SmartZone</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container header-main">
+      <a href="admin.html" class="logo">
+        <div class="logo-badge">S</div>
+        <div class="logo-text">
+          <strong>Конструктор сайту</strong>
+          <small>Редагування майже всього сайту</small>
+        </div>
+      </a>
+      <div></div>
+      <div class="header-actions">
+        <a class="soft-btn" href="admin.html">Товари</a>
+        <a class="soft-btn" href="orders.html">Замовлення</a>
+        <a class="soft-btn" href="settings.html">Налаштування</a><a class="soft-btn" href="payments.html">Оплати</a>
+        <a class="soft-btn" href="index.html">На сайт</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <h2>Повний конструктор сайту</h2>
+          <p class="muted">Тут можна міняти тексти, кольори, меню, блоки, SEO, картинки і порядок секцій.</p>
+        </div>
+      </div>
+
+      <div class="admin-layout">
+        <section class="panel">
+          <h2>Основні налаштування</h2>
+          <form class="admin-form" id="siteSettingsForm">
+            <input class="field" name="siteName" placeholder="Назва сайту" />
+            <input class="field" name="siteTagline" placeholder="Підзаголовок" />
+            <input class="field" name="logoLetter" placeholder="Літера в логотипі" />
+            <input class="field" name="logoImage" placeholder="Посилання на картинку логотипа" />
+            <input class="field" name="heroBadge" placeholder="Бейдж hero-блоку" />
+            <input class="field" name="heroTitle" placeholder="Головний заголовок" />
+            <textarea class="field" name="heroText" placeholder="Текст hero-блоку"></textarea>
+
+            <label><strong>Основний колір сайту</strong></label>
+            <input class="field" name="themeColor" type="color" />
+            <label><strong>Акцентний колір</strong></label>
+            <input class="field" name="accentColor" type="color" />
+
+            <h3>Hero картинки</h3>
+            <input class="field" name="heroImage1" placeholder="Hero картинка 1" />
+            <input class="field" name="heroImage2" placeholder="Hero картинка 2" />
+            <input class="field" name="heroImage3" placeholder="Hero картинка 3" />
+
+            <h3>Промо-блоки</h3>
+            <input class="field" name="promo1Title" placeholder="Промо 1 заголовок" />
+            <input class="field" name="promo1Text" placeholder="Промо 1 текст" />
+            <input class="field" name="promo2Title" placeholder="Промо 2 заголовок" />
+            <input class="field" name="promo2Text" placeholder="Промо 2 текст" />
+            <input class="field" name="promo3Title" placeholder="Промо 3 заголовок" />
+            <input class="field" name="promo3Text" placeholder="Промо 3 текст" />
+
+            <h3>SEO і контакти</h3>
+            <input class="field" name="seoTitle" placeholder="SEO title" />
+            <textarea class="field" name="seoDescription" placeholder="SEO description"></textarea>
+            <textarea class="field" name="footerText" placeholder="Текст футера"></textarea>
+            <input class="field" name="contactsPhone" placeholder="Телефон" />
+            <input class="field" name="contactsEmail" placeholder="Email" />
+            <input class="field" name="contactsCity" placeholder="Місто" />
+            <input class="field" name="socialInstagram" placeholder="Instagram" />
+            <input class="field" name="socialTelegram" placeholder="Telegram" />
+            <input class="field" name="socialFacebook" placeholder="Facebook" />
+
+            <button class="main-btn" type="submit">Зберегти основні налаштування</button>
+          </form>
+        </section>
+
+        <section class="panel">
+          <h2>Меню, блоки і структура</h2>
+          <form class="admin-form" id="extraContentForm">
+            <label><strong>Верхній рядок</strong></label>
+            <textarea class="field" name="toplineItems" placeholder="⚡ Щоденні акції&#10;🚚 Доставка по Україні"></textarea>
+
+            <label><strong>Меню навігації</strong></label>
+            <textarea class="field" name="menuLinks" placeholder="Акції&#10;Хіти продажів&#10;Каталог&#10;Сервіси&#10;Відгуки"></textarea>
+
+            <label><strong>Категорії</strong></label>
+            <textarea class="field" name="categoryTiles" placeholder="Смартфони|Новинки, флагмани, хіти продажів"></textarea>
+
+            <label><strong>Сервіси</strong></label>
+            <textarea class="field" name="services" placeholder="🚚 Швидка доставка|По Україні за кілька днів"></textarea>
+
+            <label><strong>Відгуки</strong></label>
+            <textarea class="field" name="reviews" placeholder="Марія|Виглядає дуже серйозно, як великий магазин техніки."></textarea>
+
+            <label><strong>Порядок блоків</strong></label>
+            <div class="builder-help">Використовуй ключі в такому форматі, по одному в рядок: <code>hero</code>, <code>promo</code>, <code>categories</code>, <code>hits</code>, <code>services</code>, <code>catalog</code>, <code>quickorder</code>, <code>reviews</code></div>
+            <div class="order-box">
+              <textarea class="field" name="sectionOrder" placeholder="hero&#10;promo&#10;categories&#10;hits&#10;services&#10;catalog&#10;quickorder&#10;reviews"></textarea>
+            </div>
+
+            <label><strong>Показ блоків</strong></label>
+            <div class="checkbox-grid">
+              <label><input type="checkbox" name="showTopline" /> Показувати верхній рядок</label>
+              <label><input type="checkbox" name="showPromo" /> Показувати промо-блоки</label>
+              <label><input type="checkbox" name="showHits" /> Показувати хіти продажів</label>
+              <label><input type="checkbox" name="showRecommended" /> Показувати рекомендовано</label>
+              <label><input type="checkbox" name="showServices" /> Показувати сервіси</label>
+              <label><input type="checkbox" name="showReviews" /> Показувати відгуки</label>
+              <label><input type="checkbox" name="showCategories" /> Показувати плитки категорій</label>
+              <label><input type="checkbox" name="showQuickOrder" /> Показувати швидке замовлення</label>
+            </div>
+
+            <button class="main-btn" type="submit">Зберегти контент і структуру</button>
+          </form>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <div class="toast" id="toast">
+    <strong id="toastTitle">Готово</strong>
+    <span id="toastText">Дію виконано.</span>
+  </div>
+
+  <script src="store.js"></script>
+  <script src="site-builder-advanced.js"></script>
+</body>
+</html>
